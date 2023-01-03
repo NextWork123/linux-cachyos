@@ -37,6 +37,8 @@ case $MARCH in
     scripts/config --disable CONFIG_MICROCODE_AMD
     MARCH="MIVYBRIDGE";;
   ICELAKE-CLIENT) MARCH="ICELAKE";;
+   # If none of the above conditions are met, exit the script
+  *) echo "Error: Unknown CPU type detected. Exiting script." >&2; exit 1;;
 esac
 
 # Add "M" prefix to MARCH variable
